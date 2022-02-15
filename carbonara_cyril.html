@@ -27,6 +27,7 @@
           margin-right: 20px;
         }
         </style>
+
     <body>
     
         <h1>~~~$~~~      Ada Tech School      ~~~$~~~</h1>
@@ -43,12 +44,12 @@ for (let i=0;i<ingredientCarbonara.length;i++) {
     console.log(`${i+1} : ` + ingredientCarbonara[i])
 }
 
-// Version HTML CSS JS BOUCLE for (let i=0;i<ingredientCarbonara.length;i++)
+// Version newParagraph.innerText BOUCLE FOR (let i=0;i<ingredientCarbonara.length;i++)
 let newDiv = document.createElement('div');
     newDiv.classList.add('series-frame');
 
 let newTitle = document.createElement('h2');
-    newTitle.innerText = `VERSION BOUCLE for (let i=0;i<ingredientCarbonara.length;i++) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newTitle.innerText = `1) VERSION newParagraph.innerText BOUCLE FOR (let i=0;i<ingredientCarbonara.length;i++) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
     newDiv.append(newTitle);
     body.append(newDiv);
 
@@ -60,23 +61,84 @@ for (let i=0;i<ingredientCarbonara.length;i++) {
     newDiv.append(newParagraph);
 }
 
-// Version HTML CSS JS BOUCLE for (let i=0 of ingredientCarbonara)
+// Version newParagraph.textContent BOUCLE FOR IN (let ingrdt of ingredientCarbonara) : pas besoin de connaitre le nb d'éléments, on affiche tout
+let newDiv1 = document.createElement('div');
+    newDiv1.classList.add('series-frame');
+
+let newTitle1 = document.createElement('h2');
+    newTitle1.innerText = `2) VERSION newParagraph.textContent BOUCLE FOR IN (let ingrdt of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newDiv1.append(newTitle1);
+    body.append(newDiv1);
+let h=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+
+for (let ingrdt in ingredientCarbonara) {
+        ingredientCarbonara.sort();
+        let newParagraph1 = document.createElement('p');
+        newParagraph1.textContent = ` ${h} : ${ingredientCarbonara[ingrdt]}`   ;  // ATTENTION IL FAUT METTRE DES CROCHETS POUR ACCEDER AUX VALEURS
+        newDiv1.append(newParagraph1);
+        h++;
+}
+
+
+// Version newParagraph.textContent BOUCLE FOR OF (let ingrdt of ingredientCarbonara) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let newDiv2 = document.createElement('div');
     newDiv2.classList.add('series-frame');
 
 let newTitle2 = document.createElement('h2');
-    newTitle2.innerText = `VERSION BOUCLE for (let i=0 of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newTitle2.innerText = `3) VERSION newParagraph.textContent BOUCLE FOR OF (let ingrdt of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
     newDiv2.append(newTitle2);
     body.append(newDiv2);
+let i=ingredientCarbonara.length-(ingredientCarbonara.length-1);
 
-for (let i of ingredientCarbonara) {
-    ingredientCarbonara.sort();
-    let newParagraph = document.createElement('p');
-    newParagraph.innerText = ` ${i+1} : ${ingredientCarbonara[i]}`;
-    //newParagraph.textContent = ` ${i+1} : ${ingredientCarbonara[i]}`   ;
-    newDiv2.append(newParagraph);
-    i++;
+for (let ingrdt of ingredientCarbonara) {
+        ingredientCarbonara.sort();
+        let newParagraph2 = document.createElement('p');
+        //newParagraph2.innerText = ` ${i}  : ${ingrdt}  `;
+        newParagraph2.textContent = ` ${i} : ${ingrdt}`   ;
+        newDiv2.append(newParagraph2);
+        i++;
 }
+
+// Version document.body.innerHTML BOUCLE WHILE (k < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
+let j=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+let listIngrdt;
+let k=0
+document.body.innerHTML+=`4) VERSION document.body.innerHTML BOUCLE WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire while (k < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+
+while (k < ingredientCarbonara.length) {
+        ingredientCarbonara.sort();
+        listIngrdt = ` ${k+1} : ${ingredientCarbonara[k]} <br>`   ;
+        document.body.innerHTML+=listIngrdt;
+        k++;
+}
+
+// Version document.body.innerHTML BOUCLE DO WHILE (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
+//let l=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+let listIngrdt2;
+let m=0;
+document.body.innerHTML+=`<br><br>5) VERSION document.body.innerHTML BOUCLE DO WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire do while (m < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+
+do {
+    ingredientCarbonara.sort();
+    listIngrdt2 = ` ${m+1} : ${ingredientCarbonara[m]} <br>`   ;
+    document.body.innerHTML+=listIngrdt2;
+    m++;
+}
+while (m < ingredientCarbonara.length);
+
+// Version document.body.innerHTML BOUCLE forEach (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
+//let l=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+let listIngrdt3;
+let n=0;
+document.body.innerHTML+=`<br><br>6) VERSION document.body.innerHTML BOUCLE ingredientCarbonara.forEach(function(listIngrdt3) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+
+ingredientCarbonara.forEach(function(listIngrdt3) {
+    ingredientCarbonara.sort();
+    listIngrdt3 = ` ${n+1} : ${ingredientCarbonara[n]} <br>`   ;
+    document.body.innerHTML+=listIngrdt3;
+    n++;
+
+  });
 
 </script>
       
