@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        let ingredients=["Pâtes", "Oeuf", "Sel", "Poivre", "Lardon", "Oignon", "Parmesan"];
+        let nombreIngredients=ingredients.length;
+        let messageUn= "<h2>Il y a " + nombreIngredients + " ingrédients</h2>";
+        document.body.innerHTML += messageUn;
+        ingredients.sort();
+        for (let i=0; i<ingredients.length; i++) {
+            let index=i+1
+            let messageDeux=`${index} ${ingredients[i]}<br>`;
+            /*let messageDeux= index + " " + ingredients[i] + "</br>";*/
+            document.body.innerHTML += messageDeux;
+        }
+    </script>
+</body>
+</html>
