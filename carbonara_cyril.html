@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>My web page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="styles>heet">
+    </head>
+    <style>
+        body {
+          background-color: #111;
+          color: #EEE;
+          font-family: 'Roboto Slab', serif;
+        }
+        
+        .series-frame {
+          max-width: 6000px;
+          /*display: flex;*/
+          align-items: center;
+          box-sizing: border-box;
+          border: 2px solid #EEE;
+          margin: 30px;
+          padding: 10px;
+        }
+        
+        .series-frame h2 {
+          margin-right: 20px;
+        }
+        </style>
+    <body>
+    
+        <h1>~~~$~~~      Ada Tech School      ~~~$~~~</h1>
+        <h2>~~~$~~~      Hello Carbonara      ~~~$~~~</h2>
+     
+<script>
+const body = document.querySelector('body');
+let ingredientCarbonara=["Pâtes","Oeuf","Sel","Poivre","Lardon","Oignon","Parmesan"]
+console.log("Nombre d'ingrédient = " + ingredientCarbonara.length  + "\nIl faut :")
+
+// Version Console Log
+for (let i=0;i<ingredientCarbonara.length;i++) {
+    ingredientCarbonara.sort();
+    console.log(`${i+1} : ` + ingredientCarbonara[i])
+}
+
+// Version HTML CSS JS BOUCLE for (let i=0;i<ingredientCarbonara.length;i++)
+let newDiv = document.createElement('div');
+    newDiv.classList.add('series-frame');
+
+let newTitle = document.createElement('h2');
+    newTitle.innerText = `VERSION BOUCLE for (let i=0;i<ingredientCarbonara.length;i++) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newDiv.append(newTitle);
+    body.append(newDiv);
+
+for (let i=0;i<ingredientCarbonara.length;i++) {
+    ingredientCarbonara.sort();
+    let newParagraph = document.createElement('p');
+    newParagraph.innerText = ` ${i+1} : ${ingredientCarbonara[i]}`;
+    //newParagraph.textContent = ` ${i+1} : ${ingredientCarbonara[i]}`   ;
+    newDiv.append(newParagraph);
+}
+
+// Version HTML CSS JS BOUCLE for (let i=0 of ingredientCarbonara)
+let newDiv2 = document.createElement('div');
+    newDiv2.classList.add('series-frame');
+
+let newTitle2 = document.createElement('h2');
+    newTitle2.innerText = `VERSION BOUCLE for (let i=0 of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newDiv2.append(newTitle2);
+    body.append(newDiv2);
+
+for (let i of ingredientCarbonara) {
+    ingredientCarbonara.sort();
+    let newParagraph = document.createElement('p');
+    newParagraph.innerText = ` ${i+1} : ${ingredientCarbonara[i]}`;
+    //newParagraph.textContent = ` ${i+1} : ${ingredientCarbonara[i]}`   ;
+    newDiv2.append(newParagraph);
+    i++;
+}
+
+</script>
+      
+    </body>
+</html>
