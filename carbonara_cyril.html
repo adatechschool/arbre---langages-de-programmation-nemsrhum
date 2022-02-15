@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="styles>heet">
     </head>
-    <style>
+   
+   /* PARTIE CSS */  
+   <style>
         body {
           background-color: #111;
           color: #EEE;
@@ -15,7 +17,7 @@
         
         .series-frame {
           max-width: 6000px;
-          /*display: flex;*/
+          /*display: flex;  // il met tout en ligne et ne revient pas à la ligne*/
           align-items: center;
           box-sizing: border-box;
           border: 2px solid #EEE;
@@ -139,6 +141,34 @@ ingredientCarbonara.forEach(function(listIngrdt3) {
     n++;
 
   });
+
+// Version document.body.innerHTML BOUCLE forEach (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
+//let l=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+let listIngrdt4;
+let listIngrdt5;
+let o=0;
+document.body.innerHTML+=`<br><br>7) VERSION document.body.innerHTML BOUCLE SWITCH (ingredientCarbonara) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+listIngrdt4=ingredientCarbonara[o];
+console.log(listIngrdt4);
+
+switch (ingredientCarbonara) {
+case listIngrdt4 :
+    ingredientCarbonara.sort();
+    console.log(listIngrdt4);
+    listIngrdt5 = ` ${o+1} : ${ingredientCarbonara[o]} <br>`   ;
+    document.body.innerHTML+=listIngrdt5;
+    console.log(listIngrdt5);
+    o++;
+    break;
+
+default :
+    console.log("RIEN");
+}
+
+console.log("FIN");
+   
+
+
 
 </script>
       
