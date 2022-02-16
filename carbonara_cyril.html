@@ -1,3 +1,4 @@
+<!--  PARTIE HTML -->  
 <!doctype html>
 <html lang="en">
     <head>
@@ -7,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="styles>heet">
     </head>
    
-   /* PARTIE CSS */  
+<!--  PARTIE CSS -->  
    <style>
         body {
           background-color: #111;
@@ -30,28 +31,80 @@
         }
         </style>
 
+<!--  PARTIE HTML --> 
     <body>
     
         <h1>~~~$~~~      Ada Tech School      ~~~$~~~</h1>
         <h2>~~~$~~~      Hello Carbonara      ~~~$~~~</h2>
-     
+        <br> 
+        <p id="test1"></p>
+        <br> 
+
+<!--  PARTIE JS -->  
 <script>
 const body = document.querySelector('body');
 let ingredientCarbonara=["Pâtes","Oeuf","Sel","Poivre","Lardon","Oignon","Parmesan"]
-console.log("Nombre d'ingrédient = " + ingredientCarbonara.length  + "\nIl faut :")
 
-// Version Console Log
+// 0) Version Console Log
+console.log("0) Version Console Log : \nNombre d'ingrédient = " + ingredientCarbonara.length  + "\nIl faut :")
 for (let i=0;i<ingredientCarbonara.length;i++) {
     ingredientCarbonara.sort();
     console.log(`${i+1} : ` + ingredientCarbonara[i])
 }
 
-// Version newParagraph.innerText BOUCLE FOR (let i=0;i<ingredientCarbonara.length;i++)
+// 1) Version document.getElementById("test1").innerHTML BOUCLE SWITCH CASE
+let listIngrdt5;
+document.getElementById("test1").innerHTML +=`<br><br>1) VERSION document.getElementById("test1").innerHTML BOUCLE SWITCH (ingredientCarbonara) CASE <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+ingredientCarbonara.sort();
+
+for (let i=0;i<ingredientCarbonara.length;i++) {
+    switch (ingredientCarbonara[i]) {
+        case "Pâtes" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+        
+        case "Oeuf" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+
+        case "Sel" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+
+        case "Poivre" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+
+        case "Lardon" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+
+        case "Oignon" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+
+        case "Parmesan" :
+                listIngrdt5 = ` ${i+1} : ${ingredientCarbonara[i]} <br>`   ;
+                document.getElementById("test1").innerHTML += listIngrdt5;
+                break;
+
+        default :
+                console.log("RIEN");
+    }
+}
+
+// 2) Version newParagraph.innerText BOUCLE FOR (let i=0;i<ingredientCarbonara.length;i++)
 let newDiv = document.createElement('div');
     newDiv.classList.add('series-frame');
 
 let newTitle = document.createElement('h2');
-    newTitle.innerText = `1) VERSION newParagraph.innerText BOUCLE FOR (let i=0;i<ingredientCarbonara.length;i++) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newTitle.innerText = `2) VERSION newParagraph.innerText BOUCLE FOR (let i=0;i<ingredientCarbonara.length;i++) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
     newDiv.append(newTitle);
     body.append(newDiv);
 
@@ -59,16 +112,15 @@ for (let i=0;i<ingredientCarbonara.length;i++) {
     ingredientCarbonara.sort();
     let newParagraph = document.createElement('p');
     newParagraph.innerText = ` ${i+1} : ${ingredientCarbonara[i]}`;
-    //newParagraph.textContent = ` ${i+1} : ${ingredientCarbonara[i]}`   ;
     newDiv.append(newParagraph);
 }
 
-// Version newParagraph.textContent BOUCLE FOR IN (let ingrdt of ingredientCarbonara) : pas besoin de connaitre le nb d'éléments, on affiche tout
+// 3) Version newParagraph.textContent BOUCLE FOR IN (let ingrdt of ingredientCarbonara) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let newDiv1 = document.createElement('div');
     newDiv1.classList.add('series-frame');
 
 let newTitle1 = document.createElement('h2');
-    newTitle1.innerText = `2) VERSION newParagraph.textContent BOUCLE FOR IN (let ingrdt of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newTitle1.innerText = `3) VERSION newParagraph.textContent BOUCLE FOR IN (let ingrdt of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
     newDiv1.append(newTitle1);
     body.append(newDiv1);
 let h=ingredientCarbonara.length-(ingredientCarbonara.length-1);
@@ -81,13 +133,12 @@ for (let ingrdt in ingredientCarbonara) {
         h++;
 }
 
-
-// Version newParagraph.textContent BOUCLE FOR OF (let ingrdt of ingredientCarbonara) : pas besoin de connaitre le nb d'éléments, on affiche tout
+// 4) Version newParagraph.textContent BOUCLE FOR OF (let ingrdt of ingredientCarbonara) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let newDiv2 = document.createElement('div');
     newDiv2.classList.add('series-frame');
 
 let newTitle2 = document.createElement('h2');
-    newTitle2.innerText = `3) VERSION newParagraph.textContent BOUCLE FOR OF (let ingrdt of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
+    newTitle2.innerText = `4) VERSION newParagraph.textContent BOUCLE FOR OF (let ingrdt of ingredientCarbonara) \n Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : ` ;
     newDiv2.append(newTitle2);
     body.append(newDiv2);
 let i=ingredientCarbonara.length-(ingredientCarbonara.length-1);
@@ -95,17 +146,16 @@ let i=ingredientCarbonara.length-(ingredientCarbonara.length-1);
 for (let ingrdt of ingredientCarbonara) {
         ingredientCarbonara.sort();
         let newParagraph2 = document.createElement('p');
-        //newParagraph2.innerText = ` ${i}  : ${ingrdt}  `;
         newParagraph2.textContent = ` ${i} : ${ingrdt}`   ;
         newDiv2.append(newParagraph2);
         i++;
 }
 
-// Version document.body.innerHTML BOUCLE WHILE (k < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
+// 5) Version document.body.innerHTML BOUCLE WHILE (k < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let j=ingredientCarbonara.length-(ingredientCarbonara.length-1);
 let listIngrdt;
 let k=0
-document.body.innerHTML+=`4) VERSION document.body.innerHTML BOUCLE WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire while (k < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+document.body.innerHTML+=`5) VERSION document.body.innerHTML BOUCLE WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire while (k < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
 
 while (k < ingredientCarbonara.length) {
         ingredientCarbonara.sort();
@@ -114,11 +164,10 @@ while (k < ingredientCarbonara.length) {
         k++;
 }
 
-// Version document.body.innerHTML BOUCLE DO WHILE (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
-//let l=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+// 6) Version document.body.innerHTML BOUCLE DO WHILE (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let listIngrdt2;
 let m=0;
-document.body.innerHTML+=`<br><br>5) VERSION document.body.innerHTML BOUCLE DO WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire do while (m < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+document.body.innerHTML+=`<br><br>6) VERSION document.body.innerHTML BOUCLE DO WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire do while (m < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
 
 do {
     ingredientCarbonara.sort();
@@ -128,11 +177,10 @@ do {
 }
 while (m < ingredientCarbonara.length);
 
-// Version document.body.innerHTML BOUCLE forEach (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
-//let l=ingredientCarbonara.length-(ingredientCarbonara.length-1);
+// 7) Version document.body.innerHTML BOUCLE FOREACH (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let listIngrdt3;
 let n=0;
-document.body.innerHTML+=`<br><br>6) VERSION document.body.innerHTML BOUCLE ingredientCarbonara.forEach(function(listIngrdt3) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
+document.body.innerHTML+=`<br><br>7) VERSION document.body.innerHTML BOUCLE FOREACH <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
 
 ingredientCarbonara.forEach(function(listIngrdt3) {
     ingredientCarbonara.sort();
@@ -142,33 +190,7 @@ ingredientCarbonara.forEach(function(listIngrdt3) {
 
   });
 
-// Version document.body.innerHTML BOUCLE forEach (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
-//let l=ingredientCarbonara.length-(ingredientCarbonara.length-1);
-let listIngrdt4;
-let listIngrdt5;
-let o=0;
-document.body.innerHTML+=`<br><br>7) VERSION document.body.innerHTML BOUCLE SWITCH (ingredientCarbonara) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
-listIngrdt4=ingredientCarbonara[o];
-console.log(listIngrdt4);
-
-switch (ingredientCarbonara) {
-case listIngrdt4 :
-    ingredientCarbonara.sort();
-    console.log(listIngrdt4);
-    listIngrdt5 = ` ${o+1} : ${ingredientCarbonara[o]} <br>`   ;
-    document.body.innerHTML+=listIngrdt5;
-    console.log(listIngrdt5);
-    o++;
-    break;
-
-default :
-    console.log("RIEN");
-}
-
 console.log("FIN");
-   
-
-
 
 </script>
       
