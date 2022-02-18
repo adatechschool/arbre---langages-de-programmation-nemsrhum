@@ -1,0 +1,52 @@
+<!--~~~$~~~        CODE PRINCIPAL DU JEU DE CHIFFRE EN HTML      ~~~$~~~-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <!--~~~$~~~        LUI DIRE D'UTILISER LE JEU DE CARACTERES UTF 8 POUR LE FRANCAIS      ~~~$~~~-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>JEU DE CHIFFRE</title>
+        
+        <!--~~~$~~~        LUI DIRE D'UTILISER LA PAGE DE STYLE.CSS POUR LE LOGO ADA TECH SCHOOL      ~~~$~~~-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!--~~~$~~~        CODE PRINCIPAL DU JEU DE CHIFFRE EN JS      ~~~$~~~-->
+        <script src="js/script.js" ></script>
+
+        <!--~~~$~~~        CODE BONUS : SI JOUEUR 2 GAGNE IL A DROIT A UN BONUS !!! ;)      ~~~$~~~-->
+        <script src="js/script2.js"></script> 
+
+    </head>
+
+    <!--~~~$~~~        PARTIE BODY PRINCIPALE DU HTML      ~~~$~~~-->
+    <body>
+    <!--~~~$~~~        TESTS DE TITRES NIVEAUX H1 A H4      ~~~$~~~-->
+        <h1>Ada Tech School</h1>
+        <h2>~~~$~~~      LET'S PLAY !!!      ~~~$~~~</h2>
+        <h3 id="message"></h3> <!--~~~$~~~        AFFICHE UN MESSAGE POUR LES JOEURS      ~~~$~~~-->
+        
+
+        <h4 id="bonus"> </h4> <!--~~~$~~~        AFFICHE UN MESSAGE BOUTON BONUS POUR JOUEUR 2 S'IL GAGNE      ~~~$~~~-->
+        <!--~~~$~~~        2 solutions : 1)soit mettre le bouton dans le html; 2) soit dans le JS et appeler le DOM : ce que je fais      ~~~$~~~-->
+        <!--1) Solution 1 :  <button id="ok" style="visibility: hidden;" onclick="gamePlay()">GO!</button> -->
+       
+        <!--~~~$~~~        AFFICHE UN MESSAGE JOUEUR 1      ~~~$~~~-->
+        <br><br>Joueur 1 : A l'abri du regard des autres joeurs ;), entre un chiffre entre 0 < ? < 50 : 
+
+        <!--~~~$~~~        AFFICHE UN CHAMP INPUT AVEC UN IDENTIFIANT "joueur1" pour pouvoir récupérer ce qu'il tapera      ~~~$~~~-->
+        <input type="text"  id="joueur1" name="input" value="" required minlength="4" maxlength="8" size="10">
+
+        <!--~~~$~~~        AFFICHE UN BOUTON OK AVEC UN APPEL A LA FONCTION "gamePlay2()" pour pouvoir récupérer ce qu'il tapera      ~~~$~~~-->
+        <input type="button" value="OK" onClick="gamePlay2()" name="BOUTON" required minlength="4" maxlength="8" size="10">
+        
+        <!--~~~$~~~        AFFICHE UN MESSAGE JOUEUR 2      ~~~$~~~-->
+        <label for="joueur2"><br><br>Joueur 2 : Entre le chiffre à deviner : </label>
+        <input type="text" id="joueur2" name="name" required minlength="4" maxlength="8" size="10">
+        <input type="button" value="OK" onClick="didIWin('joueur2')" name="name" required minlength="4" maxlength="8" size="10">
+        
+        <!--~~~$~~~        AFFICHE LE SCORE A LA FIN      ~~~$~~~-->
+        <p id="score"></p>
+         
+        
+    </body>
+</html>
