@@ -7,7 +7,7 @@
         <title>JEU DE CHIFFRE</title>
         
         <!--~~~$~~~        LUI DIRE D'UTILISER LA PAGE DE STYLE.CSS POUR LE LOGO ADA TECH SCHOOL      ~~~$~~~-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">   <!--~~~$~~~ viewport=affiche page     ~~~$~~~-->
         <link rel="stylesheet" href="css/style.css">
         
         <!--~~~$~~~        CODE PRINCIPAL DU JEU DE CHIFFRE EN JS      ~~~$~~~-->
@@ -31,13 +31,13 @@
         <!--1) Solution 1 :  <button id="ok" style="visibility: hidden;" onclick="gamePlay()">GO!</button> -->
        
         <!--~~~$~~~        AFFICHE UN MESSAGE JOUEUR 1      ~~~$~~~-->
-        <br><br>Joueur 1 : A l'abri du regard des autres joeurs ;), entre un chiffre entre 0 < ? < 50 : 
+        <br><br>Joueur 1 : A l'abri des regards indiscrets ;), entre un chiffre que tu veux : 
 
         <!--~~~$~~~        AFFICHE UN CHAMP INPUT AVEC UN IDENTIFIANT "joueur1" pour pouvoir récupérer ce qu'il tapera      ~~~$~~~-->
         <input type="text"  id="joueur1" name="input" value="" required minlength="4" maxlength="8" size="10">
 
         <!--~~~$~~~        AFFICHE UN BOUTON OK AVEC UN APPEL A LA FONCTION "gamePlay2()" pour pouvoir récupérer ce qu'il tapera      ~~~$~~~-->
-        <input type="button" value="OK" onClick="gamePlay2()" name="BOUTON" required minlength="4" maxlength="8" size="10">
+        <input type="button" value="OK" onClick="gamePlay3()" name="BOUTON" required minlength="4" maxlength="8" size="10">
         
         <!--~~~$~~~        AFFICHE UN MESSAGE JOUEUR 2      ~~~$~~~-->
         <label for="joueur2"><br><br>Joueur 2 : Entre le chiffre à deviner : </label>
