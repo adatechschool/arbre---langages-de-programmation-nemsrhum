@@ -3,8 +3,8 @@ let nb;
 let guessNB;
 let nbToGuess;
 let cpt=0;
-let minRange;
-let maxRange;
+let minRange=0;
+let maxRange="infini";
 
 // CONVERSION EN ENTIER
 function myNumber(givenNumber){
@@ -66,7 +66,7 @@ function didIWin(idJoueur) {
       return true;
    }
 
-   // SINON ON VERIFIE S'iL EST DANS LE RANGE
+   // SINON ON VERIFIE S'IL EST DANS LE RANGE
    else { 
       if  (!nbInRange(nb)) {
          console.log("Pas dans range : " + nb);
@@ -75,16 +75,19 @@ function didIWin(idJoueur) {
       else {
 
          if (nb<nbToGuess) { 
-            myNumber(alert(`TROP PETIT ! Play again! Entre un chiffre entre ${minRange}<?<${maxRange} `,""));
+            //myNumber(alert(`TROP PETIT ! Play again! Entre un chiffre entre ${minRange}<?<${maxRange} `,""));
+            // SI 
             minRange=nb;  // ON CHANGE LE RANGE MINIMUM PAR LE NOMBRE NB DU JOUEUR 2
+            myNumber(document.getElementById("message").innerHTML=`TROP PETIT ! Play again! Entre un chiffre entre ${minRange} ET ${maxRange}.`);
             console.log(`minRange = ${minRange}`);
             document.getElementById("score").innerHTML = "<br><br>Nombre de tentative(s) : " + compteur ();
             return false
          }
 
          else if (nb>nbToGuess) { 
-            myNumber(alert(`TROP GRAND ! Play again! Entre un chiffre entre ${minRange}<?<${maxRange} `,""));
+            //myNumber(alert(`TROP GRAND ! Play again! Entre un chiffre entre ${minRange}<?<${maxRange} `,""));
             maxRange=nb; // ON CHANGE LE RANGE MMAXIMUM PAR LE NOMBRE NB DU JOUEUR 2
+            myNumber(document.getElementById("message").innerHTML=`TROP GRAND ! Play again! Entre un chiffre entre ${minRange} ET ${maxRange}.`);
             console.log(`maxRange = ${maxRange}`);
             document.getElementById("score").innerHTML = "<br><br>Nombre de tentative(s) : " + compteur ();
             return false
