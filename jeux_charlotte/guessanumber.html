@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <h2 id="range"></h2>
+  <h3 id="message"></h3>
+  <label for="name">Joueur 1: Saisir un nombre compris entre 0 et 50</label>
+  <br>
+  <input type="text" id="playerOne" name="name" required
+       minlength="0" maxlength="8" size="10">
+  <button onclick="askPlayerOne()">ok</button>
+  <br>
+  <br>
+  <label for="name">Joueur 2: Saisir un nombre</label>
+  <br>
+  <input type="text" id="playerTwo" name="name" required
+       minlength="0" maxlength="8" size="10">
+  <button onclick="askNumber()">ok</button>
+  <p id="nombreTentatives"></p>
+  <script src="js/scriptetape6.js"></script>
+</body>
+</html>
