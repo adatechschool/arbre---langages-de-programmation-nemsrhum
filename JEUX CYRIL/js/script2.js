@@ -1,8 +1,10 @@
+// CALCULE AGE
 function myAge(a) {
     const age = 2022 - a;
     return age;
 }
 
+// AFFICHE UNE IMAGE
 function display_image(src, width, height, alt) {
     var a = document.createElement("img");
     a.src = src;
@@ -12,17 +14,18 @@ function display_image(src, width, height, alt) {
     document.body.appendChild(a);
 }
 
-
+// FONCTION PRINCIPALE HOROSCOPE
 function myName() {
     console.log("Dans myName");
-    var name=prompt("Quel est ton nom?","");
+    var name=prompt("Quel est ton nom?","");  // FENETRE PROMPT DEMANDE TON NOM
     var year=prompt("Quelle est ton annee de naissance?","");
     const yearInt=parseInt(year);    // Transform String to Number
-    var month=prompt("Quel est ton mois de naissance en chiffre?","");
+    var month=prompt("Quel est ton mois de naissance en chiffre?","");  // PAS BESOIN POUR L'HOROSCOPE POUR L'INSTANT, FONCTION A DEVELOPPER POUR AFFINER PLUS TARD CAR PAS LE TEMPS...
     
-    document.body.innerHTML += "<h2> Ciao, " + name + "!</h2>";
+    document.body.innerHTML += "<h2> Ciao, " + name + "!</h2>";  // SALUTATION
     document.body.innerHTML += "<h3>  Un bel âge, " + myAge(yearInt) + " ans et " + month + " mois. Très jeune et déjà plein de sagesse. C'est un âge terrible. Car c'est l'âge ou nous devenons ce que nous sommes. Et ton signe astrologique chinois est : </h3>";
     
+   // LES ANNNEES CONNUES A L'AVANCE DANS UN TABLEAU
     var rat = [1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020] ;
     var buffle = [1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021] ;
     var tigre = [1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022] ;
@@ -37,18 +40,18 @@ function myName() {
     var cochon = [1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031] ; 
     var index = 0
 
+    // PARCOURS LE TABLEAU : ICI RAT POUR EXEMPLE MAIS CA AURAIT PU UN AUTRE SANS PROBLEME
     while(index < rat.length) {
-         if (rat[index]==year) {
+         if (rat[index]==year) {  // SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU RAT ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'RATATOUILLE' sans doute. Tu es Intelligent, débrouillard, versatile, gentil. C'est bon signe !</h4>";
-            //document.body.innerHTML += <img src="img/rat.jfif">
             display_image('img/rat.jfif', 
                  276, 
                  250, 
                  'JavaScriptImage'); 
          }
 
-         else if (buffle[index]==year) {
+         else if (buffle[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU BUFFLE ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'BUFFALO' sans doute. Tu es Studieux, fiable, fort, déterminé. C'est bon signe !</h4>";
             display_image('img/buffle.jpg', 
@@ -56,7 +59,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (tigre[index]==year) {
+         else if (tigre[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU TIGRE ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'TIGROU' sans doute. Tu es Brave, confiant, compétiteur. C'est bon signe !</h4>";
             display_image('img/tigre.jpg', 
@@ -64,7 +67,7 @@ function myName() {
             250, 
             'JavaScriptImage');   
          }
-         else if (lapin[index]==year) {
+         else if (lapin[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU LAPIN ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du petit 'LAPIN' sans doute. Tu es Silencieux, élégant, gentil, responsable. C'est bon signe !</h4>";
             display_image('img/lapin.jpg', 
@@ -72,7 +75,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (dragon[index]==year) {
+         else if (dragon[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU DRAGON ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'DRAGON BALL Z' sans doute. Tu es Confiant, intelligent, enthousiaste. C'est bon signe !</h4>";
             display_image('img/dragon.jpg', 
@@ -80,7 +83,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (serpent[index]==year) {
+         else if (serpent[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU SERPENT ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'SERPENT' sans doute. Tu es Énigmatique, intelligent, clairvoyant. C'est bon signe !</h4>";
             display_image('img/serpent.jpg', 
@@ -88,7 +91,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (cheval[index]==year) {
+         else if (cheval[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU CHEVAL ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'CHEVAL' sans doute. Tu es Énergique, actif, animé. C'est bon signe !</h4>";
             display_image('img/cheval.jpg', 
@@ -96,7 +99,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (chevre[index]==year) {
+         else if (chevre[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU CHEVRE ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'CHEVRE' sans doute. Tu es Calme, doux, sympathique. C'est bon signe !</h4>";
             display_image('img/chevre.jpg', 
@@ -104,7 +107,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (singe[index]==year) {
+         else if (singe[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU SINGE ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'SINGE' sans doute. Tu es Vif, intelligent, curieux. C'est bon signe !</h4>";
             display_image('img/singe.jpg', 
@@ -112,7 +115,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (coq[index]==year) {
+         else if (coq[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU COQ ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'COCORICO' sans doute. Tu es Observateur, travailleur, courageux. C'est bon signe !</h4>";
             display_image('img/coq.jpg', 
@@ -120,7 +123,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (chien[index]==year) {
+         else if (chien[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU CHIEN ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'WAOUH WAOUH' sans doute. Tu es Mignon, honnête, prudent. C'est bon signe !</h4>";
             display_image('img/chien.jpg', 
@@ -128,7 +131,7 @@ function myName() {
             250, 
             'JavaScriptImage'); 
          }
-         else if (cochon[index]==year) {
+         else if (cochon[index]==year) {// SI L'ANNEE ENTREE CORRESPOND A L'UNE DES ANNEES DU TABLEAU COCHON ALORS AFFICHE UN MESSAGE ET PHOTO
 
             document.body.innerHTML += "<h4> ...et tu es du signe du 'COCHONOU' sans doute. Tu es Sentimental, généreux, studieux. C'est bon signe !</h4>";
             display_image('img/cochon.jpg', 
@@ -137,15 +140,15 @@ function myName() {
             'JavaScriptImage'); 
          }
 
-         else {
-           // document.body.innerHTML += "<h4> ...tu es un 'EXTRA-TERRESTRE' sans doute. C'est bon signe !</h4>";
+         else {// SI AFFICHE UN MESSAGE SURPRISE :)
+           // document.body.innerHTML += "<h4> ...mais tu es un 'EXTRA-TERRESTRE' sans doute :) C'est bon signe quand même ! ;)</h4>";
         
           }
           index = index + 1
     
         
         }
-        document.body.innerHTML += "<h5> A très bientôt et Bonne Année du Tigre d'eau!</h5>";
+        document.body.innerHTML += "<h5> A très bientôt et Bonne Année du Tigre d'eau!</h5>";  // TEST TITRE H5
   }
 
 
