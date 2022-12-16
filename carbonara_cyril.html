@@ -125,7 +125,7 @@ let newTitle1 = document.createElement('h2');
     body.append(newDiv1);
 let h=ingredientCarbonara.length-(ingredientCarbonara.length-1);
 
-for (let ingrdt in ingredientCarbonara) {
+for (let ingrdt in ingredientCarbonara) {  // ingrdt est un indice 0...1000
         ingredientCarbonara.sort();
         let newParagraph1 = document.createElement('p');
         newParagraph1.textContent = ` ${h} : ${ingredientCarbonara[ingrdt]}`   ;  // ATTENTION IL FAUT METTRE DES CROCHETS POUR ACCEDER AUX VALEURS
@@ -143,7 +143,7 @@ let newTitle2 = document.createElement('h2');
     body.append(newDiv2);
 let i=ingredientCarbonara.length-(ingredientCarbonara.length-1);
 
-for (let ingrdt of ingredientCarbonara) {
+for (let ingrdt of ingredientCarbonara) {  // ingrdt est un élément du tableau
         ingredientCarbonara.sort();
         let newParagraph2 = document.createElement('p');
         newParagraph2.textContent = ` ${i} : ${ingrdt}`   ;
@@ -154,14 +154,14 @@ for (let ingrdt of ingredientCarbonara) {
 // 5) Version document.body.innerHTML BOUCLE WHILE (k < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let j=ingredientCarbonara.length-(ingredientCarbonara.length-1);
 let listIngrdt;
-let k=0
+let k=0  // il faut un indice ici
 document.body.innerHTML+=`5) VERSION document.body.innerHTML BOUCLE WHILE (let ingrdt of ingredientCarbonara) marche pas il faut ecrire while (k < ingredientCarbonara.length) <br><br> Nombre d\'ingrédient = ${ingredientCarbonara.length} dont : <br>` ;
-
+// creer l'indice k avant!!!
 while (k < ingredientCarbonara.length) {
         ingredientCarbonara.sort();
         listIngrdt = ` ${k+1} : ${ingredientCarbonara[k]} <br>`   ;
         document.body.innerHTML+=listIngrdt;
-        k++;
+        k++;  // l'incrementer
 }
 
 // 6) Version document.body.innerHTML BOUCLE DO WHILE (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
@@ -175,7 +175,7 @@ do {
     document.body.innerHTML+=listIngrdt2;
     m++;
 }
-while (m < ingredientCarbonara.length);
+while (m < ingredientCarbonara.length);  // condition de sortie
 
 // 7) Version document.body.innerHTML BOUCLE FOREACH (m < ingredientCarbonara.length) : pas besoin de connaitre le nb d'éléments, on affiche tout
 let listIngrdt3;
